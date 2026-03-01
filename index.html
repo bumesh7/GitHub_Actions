@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umesh B | DevOps Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --text:#ffffff;
+    --accent:#38bdf8;
+}
+
+/* THEMES */
+body.midnight{ --bg:#0f172a; --card:#1e293b; --accent:#38bdf8; }
+body.cyberpunk{ --bg:#0b0f1a; --card:#141a2a; --accent:#ff00ff; }
+body.emerald{ --bg:#041b15; --card:#0c2d24; --accent:#10b981; }
+body.royal{ --bg:#1a1333; --card:#2d1f4d; --accent:#8b5cf6; }
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    transition:0.5s ease;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 60px;
+    position:fixed;
+    width:100%;
+    backdrop-filter:blur(10px);
+    background:rgba(0,0,0,0.3);
+    z-index:1000;
+}
+
+nav h2{color:var(--accent);}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav a:hover{color:var(--accent);}
+
+/* THEME SELECTOR */
+.theme-select{
+    background:var(--card);
+    border:none;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,var(--bg),var(--card));
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.hero span{color:var(--accent);}
+
+.hero p{
+    max-width:700px;
+    opacity:0.8;
+}
+
+.btn{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:var(--accent);
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+/* SECTION */
+section{
+    padding:100px 12%;
+}
+
+.section-title{
+    font-size:34px;
+    margin-bottom:40px;
+    color:var(--accent);
+    text-align:center;
+}
+
+/* GLASS CARD */
+.card{
+    background:var(--card);
+    padding:25px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    margin-bottom:25px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* SKILLS */
+.skill{
+    margin-bottom:20px;
+}
+
+.progress{
+    height:10px;
+    background:#333;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress div{
+    height:100%;
+    background:var(--accent);
+    width:0;
+    transition:1.5s;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    background:var(--card);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .hero h1{font-size:36px;}
+}
+</style>
+</head>
+<body class="midnight">
+
+<nav>
+    <h2>DevOps</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li>
+            <select class="theme-select" onchange="changeTheme(this.value)">
+                <option value="midnight">Midnight</option>
+                <option value="cyberpunk">Cyberpunk</option>
+                <option value="emerald">Emerald</option>
+                <option value="royal">Royal</option>
+            </select>
+        </li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <h1>Hi, I'm <span>Umesh B</span></h1>
+    <p>
+        DevOps Engineer with 3+ years of experience designing secure,
+        scalable, automated cloud infrastructure and CI/CD ecosystems.
+        Specialized in automation, Kubernetes orchestration, cloud architecture,
+        and production reliability engineering.
+    </p>
+    <button class="btn" onclick="scrollToSection('projects')">Explore My Work</button>
+</div>
+
+<section id="about">
+    <h2 class="section-title">Professional Summary</h2>
+    <div class="card">
+        <p>
+            Experienced DevOps Engineer with strong expertise in Linux administration,
+            Docker containerization, Kubernetes orchestration, Jenkins CI/CD,
+            Terraform infrastructure automation, and AWS cloud services.
+            Skilled in building high-availability systems, optimizing deployment
+            pipelines, implementing monitoring & alerting systems, and improving
+            system reliability across production environments.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">Technical Expertise</h2>
+
+    <div class="skill">
+        <h4>Linux & Shell Scripting</h4>
+        <div class="progress"><div style="width:90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <h4>Docker & Kubernetes</h4>
+        <div class="progress"><div style="width:85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <h4>AWS & Cloud Architecture</h4>
+        <div class="progress"><div style="width:80%"></div></div>
+    </div>
+
+    <div class="skill">
+        <h4>Jenkins / GitHub Actions</h4>
+        <div class="progress"><div style="width:85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <h4>Terraform / Infrastructure as Code</h4>
+        <div class="progress"><div style="width:75%"></div></div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">Highlighted Projects</h2>
+    <div class="grid">
+
+        <div class="card">
+            <h3>Enterprise CI/CD Platform</h3>
+            <p>Designed multi-branch Jenkins pipelines integrated with Docker & Kubernetes, reducing deployment time by 60%.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cloud Infrastructure Automation</h3>
+            <p>Provisioned full AWS environment (VPC, EC2, ALB, Auto Scaling, RDS) using Terraform modules.</p>
+        </div>
+
+        <div class="card">
+            <h3>Monitoring & Observability</h3>
+            <p>Implemented Prometheus & Grafana dashboards with alertmanager for proactive issue detection.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Umesh B | DevOps Engineer
+</footer>
+
+<script>
+function changeTheme(theme){
+    document.body.className = theme;
+}
+
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
