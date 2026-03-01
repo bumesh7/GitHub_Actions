@@ -2,22 +2,21 @@
 ---
 name: Hello workflow
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    # branches:
+    #  - main
 jobs:
-  # Name of Job 1
   greet:
     runs-on: ubuntu-latest
     steps:
       - name: say hello to umesh
         run: echo "Hello Umesh"
-        
       - name: say hello to username
         run: echo "Hello $USER"
-  # Name of Job 2
   show-versions:
     runs-on: ubuntu-latest
     steps:
       - name: check version of python and docker
-        run: docker --version && python --version
+        run: |
+          docker --version
+          python --version
