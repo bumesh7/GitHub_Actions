@@ -1,0 +1,31 @@
+name: CICD
+on:
+  workflow_dispatch:
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        run: echo "done code checkout from github"
+
+  build:
+    needs: [code]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build the code
+        run: echo "Build completed"
+
+  test:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the code
+        run: echo "Testing completed"
+
+  deploy:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy the code
+        run: echo "Deploy completed"
