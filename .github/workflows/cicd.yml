@@ -11,6 +11,7 @@ on:
           - dev
           - prod
           - staging
+          - main
 
 jobs:
   code:
