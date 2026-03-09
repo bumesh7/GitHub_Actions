@@ -1,7 +1,9 @@
 name: Deploy on Self Hosted Runner
 
 on:
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Docker Build and Push"]
+    types: [completed]
 
 jobs:
   deploy:
