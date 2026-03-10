@@ -1,0 +1,26 @@
+# packages check - issues or vulnerabilities
+# pip-audit for python
+
+name: Dependency Scan
+
+on:
+  workflow_call:
+
+jobs:
+  dependency-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: validate python version 3.12
+        uses: actions/setup-python@v5
+          with:
+            python-version: "3.12"
+      
+      - name: Install Pip audit
+        run: pip install pip-audit
+
+      - name: Audit Dependencies
+        uses: pip-audit -r requirements.txt
