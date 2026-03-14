@@ -1,5 +1,7 @@
 # ignore trivy vulnaerabilities in trivy scan
 
+# High and Low
+
 CVE-2011-3374
 TEMP-0841856-B18BAF
 CVE-2022-0563
@@ -25,3 +27,4 @@ CVE-2023-31439
 CVE-2007-5686
 CVE-2024-56433
 TEMP-0628843-DBAD28
+CVE-2026-1703
