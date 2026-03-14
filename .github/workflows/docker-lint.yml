@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Code Checkout
-        uses: actions/codecheckout@v4
+        uses: actions/checkout@v4
       
       - name: Validate Dockerfile
         uses: hadolint/hadolint-action@v3.1.0
