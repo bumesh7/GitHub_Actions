@@ -49,5 +49,5 @@ jobs:
             sudo apt-get update && sudo apt-get upgrade -y
             export DOCKERHUB_USER=${{ vars.DOCKERHUB_USER }}
             export DOCKER_TAG=${{ github.sha }}
-            echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
+            echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -username ${{ vars.DOCKERHUB_USER }} --password-stdin
             cd ~/Devops && docker compose down && docker compose up -d --build --force-recreate --pull always
