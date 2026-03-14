@@ -4,6 +4,7 @@ on:
   push:
     brnaches: [main]
 
+# (Continuous Integration with security check)
 jobs:
   code-quality:
     uses: ./.github/workflows/code-quality.yml
@@ -17,3 +18,9 @@ jobs:
       
   docker-scan:
     uses: ./.github/workflows/docker-lint.yml
+  
+  # (Deploy once all the builds are completed with secuity check)
+  build:
+    needs: [code-quality, secrets-scan, dependency-scan, docker-scan]
+    uses: ./.github/workflows/docker-build-pipeline.yml
+    secrets: inherit
