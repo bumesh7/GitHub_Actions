@@ -22,5 +22,5 @@ jobs:
   # (Deploy once all the builds are completed with secuity check)
   build:
     needs: [code-quality, secrets-scan, dependency-scan, docker-scan]
-    uses: ./.github/workflows/docker-build-pipeline.yml
+    uses: ./.github/workflows/docker-build-push.yml
     secrets: inherit
