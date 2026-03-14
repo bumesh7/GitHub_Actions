@@ -1,7 +1,8 @@
 name: Devsecops End to End
 
 on:
-  workflow_dispatch:
+  push:
+    brnaches: [main]
 
 jobs:
   code-quality:
